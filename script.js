@@ -3,7 +3,7 @@
 const app = document.getElementById("app");
 const minNumber = 0;
 const maxNumber = 1000;
-const delay = 3000;
+const delay = 1500;
 let correctNumber = 0;
 let playerGuess = 0;
 
@@ -12,7 +12,7 @@ let playerGuess = 0;
 function updateView() {
     app.innerHTML = /*html*/ `
 		<h4>Guess a number between ${minNumber} and ${maxNumber}</h4>
-		<input type="number" placeholder="Type in a number" id="guessInput">
+		<input type="number" placeholder="Type in a number" id="guessInput" onchange="checkNumber()">
 		<button onclick="checkNumber()">Enter</button>
 		<br/><br/>
 		<div id="feedback"></div>
