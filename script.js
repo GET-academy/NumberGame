@@ -46,10 +46,10 @@ function checkNumber() {
     }
 
     if (playerGuess == correctNumber) {
-        giveFeedback("You guess is correct", false);
+        giveFeedback("Your guess is correct", false);
     }
 
     if (playerGuess < minNumber || playerGuess > maxNumber) {
-        giveFeedback("You number must be between " + minNumber + " and " + maxNumber, true);
+        giveFeedback("The number must be between " + minNumber + " and " + maxNumber, true);
     }
 }
