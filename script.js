@@ -6,6 +6,7 @@ const maxNumber = 1000;
 const delay = 1500;
 let correctNumber = 0;
 let playerGuess = 0;
+let attempts = 0;
 
 // view
 
@@ -13,7 +14,7 @@ function updateView() {
     app.innerHTML = /*html*/ `
 		<h4>Guess a number between ${minNumber} and ${maxNumber}</h4>
 		<input type="number" placeholder="Type in your guess here" id="guessInput" onchange="checkNumber()">
-		<br/><br/>
+		<div id="displayAttempts"></div>
 		<div id="feedback"></div>
 	`;
 }
@@ -23,6 +24,17 @@ function updateView() {
 function generateNumber() {
     correctNumber = Math.floor(Math.random() * maxNumber);
     updateView();
+    updateAttempts();
+}
+
+function updateAttempts() {
+    const attemptDisplay = document.querySelector("#displayAttempts");
+    if (attempts == 0) {
+        attemptDisplay.innerHTML = "Attempts: none";
+    } else {
+        attemptDisplay.innerHTML = "Attempts: " + attempts;
+    }
+    attempts++;
 }
 
 function giveFeedback(inText, inDelay) {
@@ -31,6 +43,7 @@ function giveFeedback(inText, inDelay) {
     if (inDelay) {
         setTimeout(() => { resultFeedback.innerHTML = ""; }, inDelay);
     }
+    updateAttempts();
 }
 
 function checkNumber() {
