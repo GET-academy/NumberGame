@@ -2,6 +2,7 @@
 	--bg-color: #333;
 	--bg-input-color: #444;
 	--fg-color: #ddd;
+	--input-bt-margin: 10px;
 }
 
 body {
@@ -17,4 +18,5 @@ button {
 input {
 	background-color: var(--bg-input-color);
 	color: var(--fg-color);
+	margin-bottom: var(--input-bt-margin);
 }
