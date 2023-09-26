@@ -1,0 +1,22 @@
+:root {
+	--bg-color: #333;
+	--bg-input-color: #444;
+	--fg-color: #ddd;
+	--input-bt-margin: 10px;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+}
+
+button {
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+}
+
+input {
+	background-color: var(--bg-input-color);
+	color: var(--fg-color);
+	margin-bottom: var(--input-bt-margin);
+}
